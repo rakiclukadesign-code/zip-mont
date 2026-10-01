@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ZIP-MONT</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -170,7 +175,8 @@ section.block{padding-block:var(--section)}
 .proj h3{font-size:28px;transition:color .2s}
 .proj:hover h3{color:var(--gold)}
 .proj.feature h3{font-size:44px}
-.proj .loc{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);white-space:nowrap}
+.proj .loc{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);white-space:nowrap;flex-shrink:0}
+.proj-top h3{min-width:0}
 .specs{display:flex;flex-wrap:wrap;border-top:1px solid var(--line);margin:0}
 .specs div{display:flex;flex-direction:column;gap:4px;padding:12px 16px 0 0;margin-right:16px;font-variant-numeric:tabular-nums}
 .specs div+div{padding-left:16px;border-left:1px solid var(--line)}
@@ -263,8 +269,20 @@ section.block{padding-block:var(--section)}
 @media (max-width:640px){
   :root{--gutter:16px;--section:80px}
   .brand-name{font-size:24px}
+  h1{font-size:44px}
+  h2{font-size:40px}
+  h3{font-size:28px}
   .hero{padding-top:56px}
-  .hero-art{padding:24px 16px 96px}
+  .hero-copy{gap:24px}
+  .hero-actions .btn{flex:1 1 100%;justify-content:center}
+  .hero-art{flex-direction:column;align-items:stretch;padding:32px 16px 0;gap:24px}
+  .hero-art .titleblock{position:static;margin-inline:-16px;border-left:0;grid-template-columns:1fr 1fr}
+  .proj-top{flex-direction:column;align-items:flex-start;gap:8px}
+  .proj .loc{white-space:normal}
+  .sheet dt,.sheet dd{padding:12px 16px}
+  .about-copy .body{font-size:16px}
+  .film-top{flex-direction:column;gap:8px}
+  .cta .wrap{padding-block:64px;gap:32px}
   .lead{font-size:18px}
   .stat .num{font-size:48px}
   .stat .num small{font-size:24px}
@@ -286,7 +304,8 @@ section.block{padding-block:var(--section)}
   .play .circle{width:72px;height:72px}
 }
 </style>
-
+</head>
+<body>
 <header class="header" id="top">
   <div class="wrap">
     <a href="#top" class="brand" aria-label="ZIP-MONT početna">
@@ -607,3 +626,5 @@ section.block{padding-block:var(--section)}
   document.getElementById('y').textContent=new Date().getFullYear();
 })();
 </script>
+</body>
+</html>
