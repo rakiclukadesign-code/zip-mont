@@ -236,6 +236,7 @@ section.block{padding-block:var(--section)}
 .job:hover .go{background:var(--gold);color:var(--on-gold);border-color:var(--gold)}
 .jobs-note{padding-top:24px;color:var(--steel);font-size:15px}
 .jobs-note b{color:var(--fg);font-weight:500}
+.jobs-note a:hover b{color:var(--gold)}
 
 /* kontakt */
 .cta{background:var(--gold);color:var(--on-gold)}
@@ -246,7 +247,9 @@ section.block{padding-block:var(--section)}
 .cta .contact{display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(18,18,18,.24)}
 .cta .contact div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-block:16px;border-bottom:1px solid rgba(18,18,18,.24)}
 .cta .contact span{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.72}
-.cta .contact strong{font-family:var(--f-display);font-size:32px;font-weight:700;letter-spacing:.02em;line-height:1.08;text-align:right}
+.cta .contact strong{font-family:var(--f-display);font-size:32px;font-weight:700;letter-spacing:.02em;line-height:1.08;text-align:right;overflow-wrap:anywhere}
+.cta .contact a strong{transition:opacity .2s}
+.cta .contact a:hover strong{opacity:.72}
 
 /* footer */
 .footer{padding-top:96px;padding-bottom:40px}
@@ -469,7 +472,7 @@ section.block{padding-block:var(--section)}
         <aside class="sheet" aria-label="Podaci o firmi">
           <div class="sheet-head"><span>List podataka</span><span>ZIP-MONT d.o.o.</span></div>
           <dl>
-            <dt>Sedište</dt><dd>Valjevo, Srbija</dd>
+            <dt>Sedište</dt><dd>Ljubomira Pavlovića 2, 14104 Beloševac</dd>
             <dt>Delatnost</dt><dd>Čelične i metalne konstrukcije</dd>
             <dt>Namena</dt><dd>Proizvodni, industrijski i poslovni objekti</dd>
             <dt>Objekti</dt><dd>Hale, magacini, nadstrešnice</dd>
@@ -614,11 +617,11 @@ section.block{padding-block:var(--section)}
       </div>
       <div>
         <div class="jobs">
-          <a href="#kontakt" class="job"><h3>Zavarivač</h3><span class="meta"><span>Radionica · Valjevo</span><span>Puno radno vreme</span></span><span class="go" aria-hidden="true">→</span></a>
-          <a href="#kontakt" class="job"><h3>Monter čeličnih konstrukcija</h3><span class="meta"><span>Teren</span><span>Puno radno vreme</span></span><span class="go" aria-hidden="true">→</span></a>
-          <a href="#kontakt" class="job"><h3>Bravar</h3><span class="meta"><span>Radionica · Valjevo</span><span>Puno radno vreme</span></span><span class="go" aria-hidden="true">→</span></a>
+          <a href="mailto:zipmontva@yahoo.com?subject=Prijava%20za%20posao&amp;body=Po%C5%A1tovani%2C%0A%0APrijavljujem%20se%20za%20radno%20mesto%3A%20Zavariva%C4%8D.%0A%0AIme%20i%20prezime%3A%20%0AEmail%3A%20%0ABroj%20telefona%3A%20%0A%0ACV%20se%20nalazi%20u%20prilogu.%0A%0ASrda%C4%8Dan%20pozdrav" class="job"><h3>Zavarivač</h3><span class="meta"><span>Radionica · Valjevo</span><span>Puno radno vreme</span></span><span class="go" aria-hidden="true">→</span></a>
+          <a href="mailto:zipmontva@yahoo.com?subject=Prijava%20za%20posao&amp;body=Po%C5%A1tovani%2C%0A%0APrijavljujem%20se%20za%20radno%20mesto%3A%20Monter%20%C4%8Deli%C4%8Dnih%20konstrukcija.%0A%0AIme%20i%20prezime%3A%20%0AEmail%3A%20%0ABroj%20telefona%3A%20%0A%0ACV%20se%20nalazi%20u%20prilogu.%0A%0ASrda%C4%8Dan%20pozdrav" class="job"><h3>Monter čeličnih konstrukcija</h3><span class="meta"><span>Teren</span><span>Puno radno vreme</span></span><span class="go" aria-hidden="true">→</span></a>
+          <a href="mailto:zipmontva@yahoo.com?subject=Prijava%20za%20posao&amp;body=Po%C5%A1tovani%2C%0A%0APrijavljujem%20se%20za%20radno%20mesto%3A%20Bravar.%0A%0AIme%20i%20prezime%3A%20%0AEmail%3A%20%0ABroj%20telefona%3A%20%0A%0ACV%20se%20nalazi%20u%20prilogu.%0A%0ASrda%C4%8Dan%20pozdrav" class="job"><h3>Bravar</h3><span class="meta"><span>Radionica · Valjevo</span><span>Puno radno vreme</span></span><span class="go" aria-hidden="true">→</span></a>
         </div>
-        <p class="jobs-note">Nema pozicije za vas? Pošaljite CV na <b>karijera@zip-mont.rs</b></p>
+        <p class="jobs-note">Nema pozicije za vas? Pošaljite CV na <a href="mailto:zipmontva@yahoo.com?subject=Prijava%20za%20posao&amp;body=Po%C5%A1tovani%2C%0A%0APrijavljujem%20se%20za%20posao%20u%20va%C5%A1oj%20firmi.%0A%0AIme%20i%20prezime%3A%20%0AEmail%3A%20%0ABroj%20telefona%3A%20%0A%0ACV%20se%20nalazi%20u%20prilogu.%0A%0ASrda%C4%8Dan%20pozdrav"><b>zipmontva@yahoo.com</b></a></p>
       </div>
     </div>
   </section>
@@ -632,9 +635,9 @@ section.block{padding-block:var(--section)}
       <p>Bilo da imate gotovu projektnu dokumentaciju ili ste tek u fazi planiranja, kontaktirajte nas.</p>
     </div>
     <div class="contact">
-      <div><span>Telefon</span><strong>+381 14 000 000</strong></div>
-      <div><span>Email</span><strong>office@zip-mont.rs</strong></div>
-      <div><span>Adresa</span><strong>Valjevo, Srbija</strong></div>
+      <div><span>Telefon</span><a href="tel:+381638154775"><strong>063 815 4775</strong></a></div>
+      <div><span>Email</span><a href="mailto:zipmontva@yahoo.com"><strong>zipmontva@yahoo.com</strong></a></div>
+      <div><span>Adresa</span><strong>Ljubomira Pavlovića 2<br>14104 Beloševac</strong></div>
     </div>
   </div>
 </section>
@@ -660,7 +663,7 @@ section.block{padding-block:var(--section)}
       </div>
       <div class="foot-col">
         <h5>Kontakt</h5>
-        <span>+381 14 000 000</span><span>office@zip-mont.rs</span><span>Valjevo, Srbija</span>
+        <a href="tel:+381638154775">063 815 4775</a><a href="mailto:zipmontva@yahoo.com">zipmontva@yahoo.com</a><span>Ljubomira Pavlovića 2<br>14104 Beloševac, Srbija</span>
       </div>
       <div class="foot-col">
         <h5>Pratite nas</h5>
