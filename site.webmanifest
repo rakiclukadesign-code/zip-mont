@@ -1,0 +1,14 @@
+{
+  "name": "ZIP-MONT d.o.o. Valjevo",
+  "short_name": "ZIP-MONT",
+  "description": "Projektovanje, izrada i montaža čeličnih i metalnih konstrukcija.",
+  "lang": "sr",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0d0e0f",
+  "theme_color": "#0d0e0f",
+  "icons": [
+    { "src": "android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
