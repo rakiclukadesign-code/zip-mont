@@ -191,7 +191,11 @@ section.block{padding-block:var(--section)}
 .statement span{display:block}
 .statement span:nth-child(2){color:var(--silver)}
 .statement span:last-child{color:var(--gold)}
-@media (min-width:1201px){.statement{text-align:right}}
+@media (min-width:1201px){
+  .statement{text-align:right}
+  .h-lines span{display:block;white-space:nowrap}
+  #proces .sec-head{grid-template-columns:minmax(0,1fr)}
+}
 
 /* projekti */
 .projects-bg{background:var(--ink-2);border-block:1px solid var(--line)}
@@ -551,7 +555,7 @@ section.block{padding-block:var(--section)}
       <div class="sec-head">
         <div class="intro">
           <p class="eyebrow">Naš proces rada</p>
-          <h2>Od prve linije projekta do poslednjeg spoja na objektu.</h2>
+          <h2 class="h-lines"><span>Od prve linije projekta</span> <span>do poslednjeg spoja</span> <span>na objektu.</span></h2>
         </div>
       </div>
       <ol class="steps" style="list-style:none;margin:0;padding:0">
