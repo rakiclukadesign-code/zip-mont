@@ -65,7 +65,8 @@ p{margin:0}
 .header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(13,14,15,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .header .wrap{display:flex;align-items:center;justify-content:space-between;height:80px;gap:32px}
 .brand{display:flex;align-items:center;gap:12px}
-.brand svg{width:44px;height:32px}
+.brand .logo{height:56px;width:auto}
+.foot-grid .brand .logo{height:96px}
 .brand-name{font-family:var(--f-display);font-weight:800;font-size:28px;letter-spacing:.04em;line-height:1}
 .brand-name b{color:var(--gold);font-weight:800}
 .brand-name span{color:var(--silver)}
@@ -358,13 +359,7 @@ section.block{padding-block:var(--section)}
 <header class="header" id="top">
   <div class="wrap">
     <a href="#top" class="brand" aria-label="ZIP-MONT početna">
-      <svg viewBox="0 0 44 32" fill="none" aria-hidden="true">
-        <path d="M6 26V12h6v14" stroke="var(--silver)" stroke-width="2"/>
-        <path d="M17 24V4l8 4v16" stroke="var(--gold)" stroke-width="2.4"/>
-        <path d="M30 26V10l6 4v12" stroke="var(--silver)" stroke-width="2"/>
-        <path d="M2 28h14l7-8 7 8h12" stroke="var(--gold)" stroke-width="2"/>
-      </svg>
-      <span class="brand-name"><b>ZIP</b><span>-MONT</span></span>
+      <img src="img/logo.png" alt="ZIP-MONT" class="logo" width="480" height="300">
     </a>
     <nav class="nav" id="nav" aria-label="Glavna navigacija">
       <a href="#o-nama">O nama</a>
@@ -658,13 +653,7 @@ section.block{padding-block:var(--section)}
     <div class="foot-grid">
       <div class="brand-col">
         <a href="#top" class="brand" aria-label="ZIP-MONT početna">
-          <svg viewBox="0 0 44 32" fill="none" aria-hidden="true">
-            <path d="M6 26V12h6v14" stroke="var(--silver)" stroke-width="2"/>
-            <path d="M17 24V4l8 4v16" stroke="var(--gold)" stroke-width="2.4"/>
-            <path d="M30 26V10l6 4v12" stroke="var(--silver)" stroke-width="2"/>
-            <path d="M2 28h14l7-8 7 8h12" stroke="var(--gold)" stroke-width="2"/>
-          </svg>
-          <span class="brand-name"><b>ZIP</b><span>-MONT</span></span>
+          <img src="img/logo.png" alt="ZIP-MONT" class="logo" width="480" height="300">
         </a>
         <p class="slogan">Gradimo kvalitet. Stvaramo vrednost.</p>
       </div>
