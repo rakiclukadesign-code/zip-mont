@@ -94,6 +94,18 @@ p{margin:0}
 .titleblock div:nth-last-child(-n+2){border-bottom:0}
 .titleblock .v{color:var(--silver)}
 
+/* hero razmaci (desktop i tablet) */
+@media (min-width:641px){
+  .hero-copy{gap:0}
+  .hero-copy h1{margin-top:32px}
+  .hero-copy .lead{margin-top:16px}
+  .hero-actions{margin-top:28px;padding-top:0}
+}
+/* naslov u dva reda na desktopu */
+@media (min-width:1201px){
+  .hero-copy h1 .l{display:block;white-space:nowrap}
+}
+
 /* animacija crteža */
 .draw{stroke-dasharray:1200;stroke-dashoffset:0;animation:draw 2.4s cubic-bezier(.6,0,.2,1) both}
 .draw.d2{animation-delay:.4s}
@@ -361,7 +373,7 @@ section.block{padding-block:var(--section)}
       <div class="hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">ZIP-MONT d.o.o. · Valjevo</p>
-          <h1>Od projekta do <em>konstrukcije.</em></h1>
+          <h1><span class="l">Od projekta</span> <span class="l">do <em>konstrukcije.</em></span></h1>
           <p class="lead">ZIP-MONT Valjevo bavi se projektovanjem, izradom i montažom čeličnih i metalnih konstrukcija za proizvodne, industrijske, poslovne i druge objekte različitih namena.</p>
           <div class="hero-actions">
             <a href="#usluge" class="btn btn-gold">Naše usluge <span class="arr">→</span></a>
