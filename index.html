@@ -301,7 +301,7 @@ section.block{padding-block:var(--section)}
 .sheet dt:last-of-type,.sheet dd:last-of-type{border-bottom:0}
 
 /* brojač (ispod O nama) */
-.counters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:96px;border-block:1px solid var(--line)}
+.counters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:96px;border-block:1px solid var(--line)}
 .counter{padding:40px 32px;display:flex;flex-direction:column;gap:12px;border-right:1px solid var(--line)}
 .counter:first-child{padding-left:0}
 .counter:last-child{border-right:0}
@@ -430,11 +430,9 @@ section.block{padding-block:var(--section)}
 
 /* responsive */
 @media (max-width:1200px){
-  .counters{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:64px}
+  .counters{margin-top:64px}
   .counter{padding:32px 24px}
-  .counter:nth-child(odd){padding-left:0}
-  .counter:nth-child(even){border-right:0}
-  .counter:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .counter:first-child{padding-left:0}
   .nav{gap:28px}
   .hero-grid{grid-template-columns:minmax(0,1fr)}
   .hero-copy{padding-bottom:0}
@@ -486,7 +484,7 @@ section.block{padding-block:var(--section)}
   .ref:last-child{border-bottom:0}
   .ref strong{font-size:28px}
   .counters{grid-template-columns:minmax(0,1fr);margin-top:48px}
-  .counter,.counter:nth-child(odd){padding:24px 0;border-right:0;border-bottom:1px solid var(--line)}
+  .counter,.counter:first-child{padding:24px 0;border-right:0;border-bottom:1px solid var(--line)}
   .counter:last-child{border-bottom:0}
   .about-copy .body,.film-main .body{font-size:16px}
   .sheet dt,.sheet dd{padding:12px 16px}
@@ -650,12 +648,11 @@ section.block{padding-block:var(--section)}
       </div>
     </div>
 
-    <!-- BROJAČ — PRIMER VREDNOSTI: zameniti pravim podacima klijenta (data-to = broj, data-sep = "." za hiljade) -->
+    <!-- BROJAČ — podaci klijenta (data-to = broj, data-sep = "." za hiljade) -->
     <div class="wrap">
       <div class="counters" aria-label="ZIP-MONT u brojkama">
-        <div class="counter"><span class="num"><span class="cnt" data-to="18">18</span></span><span class="lbl">godina iskustva u čeličnim konstrukcijama</span></div>
-        <div class="counter"><span class="num"><span class="cnt" data-to="240">240</span><small>+</small></span><span class="lbl">završenih objekata</span></div>
-        <div class="counter"><span class="num"><span class="cnt" data-to="36000" data-sep=".">36.000</span><small>t</small></span><span class="lbl">izrađene i montirane čelične konstrukcije</span></div>
+        <div class="counter"><span class="num"><span class="cnt" data-to="20">20</span><small>+</small></span><span class="lbl">završenih projekata</span></div>
+        <div class="counter"><span class="num"><span class="cnt" data-to="8750" data-sep=".">8.750</span><small>t</small></span><span class="lbl">izrađene i montirane čelične konstrukcije</span></div>
         <div class="counter"><span class="num"><span class="cnt" data-to="5">5</span></span><span class="lbl">usluga pod jednim krovom, od projekta do montaže</span></div>
       </div>
     </div>
