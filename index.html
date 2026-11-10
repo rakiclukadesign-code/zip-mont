@@ -431,6 +431,8 @@ section.block{padding-block:var(--section)}
 .foot-col a:hover{color:var(--gold)}
 .foot-big{font-family:var(--f-display);font-weight:800;font-size:clamp(80px,17vw,280px);line-height:.8;letter-spacing:.02em;text-transform:uppercase;padding-top:64px;color:var(--ink-2);-webkit-text-stroke:1px var(--line);white-space:nowrap;overflow:hidden}
 .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:32px;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel)}
+.foot-bottom .credit{color:var(--silver);border-bottom:1px solid var(--line);padding-bottom:2px;transition:color .2s,border-color .2s}
+.foot-bottom .credit:hover{color:var(--gold);border-color:var(--gold)}
 
 /* responsive */
 @media (max-width:1200px){
@@ -850,7 +852,7 @@ section.block{padding-block:var(--section)}
     <div class="foot-big" aria-hidden="true">ZIP-MONT</div>
     <div class="foot-bottom">
       <span>© <span id="y">2026</span> ZIP-MONT d.o.o. Valjevo</span>
-      <span>Politika privatnosti · Kolačići</span>
+      <span>Dizajn i izrada: <a href="https://rakicdsgn.com" target="_blank" rel="noopener" class="credit">Luka Rakić</a></span>
     </div>
   </div>
 </footer>
