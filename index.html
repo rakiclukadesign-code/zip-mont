@@ -198,6 +198,9 @@ h1{font-size:clamp(56px,8vw,128px)}
 h2{font-size:clamp(44px,5.2vw,84px)}
 h3{font-size:32px;line-height:1.08}
 h1 em,h2 em{font-style:normal;color:var(--gold)}
+/* bez jedne reči u poslednjem redu */
+p,li,dd,.lbl,.lead,.service p,.film-foot{text-wrap:pretty}
+.step h4{text-wrap:pretty}
 .lead{font-size:20px;line-height:1.6;color:var(--silver);max-width:560px;margin:0}
 p{margin:0}
 
@@ -270,7 +273,7 @@ p{margin:0}
 .refs-label{padding:40px 32px 40px 0;border-right:1px solid var(--line);font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:flex;align-items:flex-start}
 .ref{padding:40px 32px;display:flex;flex-direction:column;gap:12px;border-right:1px solid var(--line)}
 .ref:last-child{border-right:0;padding-right:0}
-.ref strong{font-family:var(--f-display);font-weight:700;font-size:32px;line-height:1.08;text-transform:uppercase;letter-spacing:.01em}
+.ref strong{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,2.2vw,32px);line-height:1.08;text-transform:uppercase;letter-spacing:.01em}
 .ref span{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel)}
 
 /* sekcije */
@@ -308,6 +311,7 @@ section.block{padding-block:var(--section)}
 .counter .num{font-family:var(--f-display);font-weight:800;font-size:clamp(56px,6vw,96px);line-height:1;color:var(--fg);font-variant-numeric:tabular-nums;display:flex;align-items:baseline;gap:4px}
 .counter .num small{font-size:.5em;color:var(--gold)}
 .counter .lbl{font-size:15px;color:var(--steel);max-width:240px}
+@media (min-width:1201px){.counter .lbl{max-width:none;white-space:nowrap}}
 
 /* usluge */
 .services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
@@ -341,11 +345,11 @@ section.block{padding-block:var(--section)}
 
 /* proces */
 .steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
-.step{position:relative;padding-top:32px;padding-right:24px;display:flex;flex-direction:column;gap:12px}
+.step{position:relative;padding-top:32px;padding-right:12px;display:flex;flex-direction:column;gap:12px}
 .step::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--line)}
 .step::after{content:"";position:absolute;left:0;top:-4px;width:8px;height:8px;background:var(--gold)}
 .step .n{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;color:var(--gold)}
-.step h4{margin:0;font-family:var(--f-display);font-weight:700;font-size:28px;text-transform:uppercase;line-height:1.08;text-wrap:balance}
+.step h4{margin:0;font-family:var(--f-display);font-weight:700;font-size:26px;text-transform:uppercase;line-height:1.08;text-wrap:balance}
 .statement{margin-top:96px;padding-top:48px;border-top:1px solid var(--line);font-family:var(--f-display);font-weight:800;font-size:clamp(40px,5.6vw,96px);line-height:1.04;text-transform:uppercase;letter-spacing:.01em;text-wrap:balance}
 .statement span{display:block}
 .statement span:nth-child(2){color:var(--silver)}
@@ -733,7 +737,7 @@ section.block{padding-block:var(--section)}
         <li class="step"><span class="n">01</span><h4>Konsultacije i analiza projekta</h4></li>
         <li class="step"><span class="n">02</span><h4>Tehnička priprema</h4></li>
         <li class="step"><span class="n">03</span><h4>Proizvodnja</h4></li>
-        <li class="step"><span class="n">04</span><h4>Priprema za transport</h4></li>
+        <li class="step"><span class="n">04</span><h4>Priprema za&nbsp;transport</h4></li>
         <li class="step"><span class="n">05</span><h4>Montaža</h4></li>
         <li class="step"><span class="n">06</span><h4>Završna kontrola</h4></li>
       </ol>
