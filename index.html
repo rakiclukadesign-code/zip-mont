@@ -300,6 +300,15 @@ section.block{padding-block:var(--section)}
 .sheet dd{color:var(--fg)}
 .sheet dt:last-of-type,.sheet dd:last-of-type{border-bottom:0}
 
+/* brojač (ispod O nama) */
+.counters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:96px;border-block:1px solid var(--line)}
+.counter{padding:40px 32px;display:flex;flex-direction:column;gap:12px;border-right:1px solid var(--line)}
+.counter:first-child{padding-left:0}
+.counter:last-child{border-right:0}
+.counter .num{font-family:var(--f-display);font-weight:800;font-size:clamp(56px,6vw,96px);line-height:1;color:var(--fg);font-variant-numeric:tabular-nums;display:flex;align-items:baseline;gap:4px}
+.counter .num small{font-size:.5em;color:var(--gold)}
+.counter .lbl{font-size:15px;color:var(--steel);max-width:240px}
+
 /* usluge */
 .services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
 .service{position:relative;padding:40px 32px 48px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:20px;transition:background .3s}
@@ -421,6 +430,11 @@ section.block{padding-block:var(--section)}
 
 /* responsive */
 @media (max-width:1200px){
+  .counters{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:64px}
+  .counter{padding:32px 24px}
+  .counter:nth-child(odd){padding-left:0}
+  .counter:nth-child(even){border-right:0}
+  .counter:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .nav{gap:28px}
   .hero-grid{grid-template-columns:minmax(0,1fr)}
   .hero-copy{padding-bottom:0}
@@ -471,6 +485,9 @@ section.block{padding-block:var(--section)}
   .ref,.ref:nth-child(odd){padding:24px 0;border-right:0;border-bottom:1px solid var(--line)}
   .ref:last-child{border-bottom:0}
   .ref strong{font-size:28px}
+  .counters{grid-template-columns:minmax(0,1fr);margin-top:48px}
+  .counter,.counter:nth-child(odd){padding:24px 0;border-right:0;border-bottom:1px solid var(--line)}
+  .counter:last-child{border-bottom:0}
   .about-copy .body,.film-main .body{font-size:16px}
   .sheet dt,.sheet dd{padding:12px 16px}
   .services{grid-template-columns:minmax(0,1fr)}
@@ -630,6 +647,16 @@ section.block{padding-block:var(--section)}
             <dt>Posebno</dt><dd>Toplane, mostovi, specijalne konstrukcije</dd>
           </dl>
         </aside>
+      </div>
+    </div>
+
+    <!-- BROJAČ — PRIMER VREDNOSTI: zameniti pravim podacima klijenta (data-to = broj, data-sep = "." za hiljade) -->
+    <div class="wrap">
+      <div class="counters" aria-label="ZIP-MONT u brojkama">
+        <div class="counter"><span class="num"><span class="cnt" data-to="18">18</span></span><span class="lbl">godina iskustva u čeličnim konstrukcijama</span></div>
+        <div class="counter"><span class="num"><span class="cnt" data-to="240">240</span><small>+</small></span><span class="lbl">završenih objekata</span></div>
+        <div class="counter"><span class="num"><span class="cnt" data-to="36000" data-sep=".">36.000</span><small>t</small></span><span class="lbl">izrađene i montirane čelične konstrukcije</span></div>
+        <div class="counter"><span class="num"><span class="cnt" data-to="5">5</span></span><span class="lbl">usluga pod jednim krovom, od projekta do montaže</span></div>
       </div>
     </div>
   </section>
@@ -868,6 +895,22 @@ section.block{padding-block:var(--section)}
     if(e.key==='ArrowLeft')show(cur-1);
     if(e.key==='ArrowRight')show(cur+1);
   });
+
+  /* brojač: broji od 0 kad dođe na ekran (bez animacije ako je isključena) */
+  var cnts=[].slice.call(document.querySelectorAll('.cnt'));
+  function fmt(n,sep){var t=String(n);return sep?t.replace(/\B(?=(\d{3})+(?!\d))/g,sep):t;}
+  if(cnts.length&&'IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return;io.unobserve(e.target);
+      var el=e.target,to=+el.dataset.to,sep=el.dataset.sep,t0=null;
+      function step(t){if(!t0)t0=t;var k=Math.min((t-t0)/1600,1);k=1-Math.pow(1-k,3);el.textContent=fmt(Math.round(to*k),sep);if(k<1)requestAnimationFrame(step);}
+      requestAnimationFrame(step);
+    });},{threshold:.6});
+    cnts.forEach(function(el){
+      var r=el.getBoundingClientRect();
+      if(r.top>innerHeight){el.textContent='0';io.observe(el);} /* samo ako je ispod ekrana pri učitavanju */
+    });
+  }
 
   document.getElementById('y').textContent=new Date().getFullYear();
 })();
