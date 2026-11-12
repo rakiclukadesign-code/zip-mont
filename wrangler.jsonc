@@ -1,9 +1,9 @@
-// Cloudflare (Workers – statički sajt): objavljuje fajlove iz ovog foldera
+// Cloudflare (Workers – statički sajt): objavljuje fajlove iz foldera public
 {
   "name": "zip-mont",
   "compatibility_date": "2026-11-01",
   "assets": {
-    "directory": "./",
+    "directory": "./public",
     "not_found_handling": "404-page"
   }
 }
