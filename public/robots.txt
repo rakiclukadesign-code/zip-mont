@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zipmont.rs/sitemap.xml
+Sitemap: https://zipmont.com/sitemap.xml
