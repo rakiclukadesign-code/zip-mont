@@ -389,12 +389,21 @@ section.block{padding-block:var(--section)}
 .proj:hover .pt{color:var(--gold)}
 .proj.feature .pt{font-size:44px}
 .proj .loc{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);white-space:nowrap;flex-shrink:0}
-.zoom{position:absolute;right:16px;bottom:16px;z-index:1;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:var(--scrim);border:1px solid var(--line);color:var(--gold);opacity:0;transition:opacity .3s}
+.zoom{position:absolute;right:16px;bottom:16px;z-index:1;height:40px;padding-inline:12px;gap:8px;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;background:var(--scrim);border:1px solid var(--line);color:var(--gold);opacity:0;transition:opacity .3s}
 .proj:hover .zoom,.proj:focus-visible .zoom{opacity:1}
+.proj.wide{grid-column:span 2}
+.proj.wide .ph{aspect-ratio:auto;flex:1;min-height:280px}
+.zoom b{font-weight:500;font-size:16px;color:var(--gold)}
+.lb-thumbs{display:flex;gap:8px;overflow-x:auto;padding-top:16px;scrollbar-width:thin}
+.lb .lb-thumbs button{flex:0 0 auto;width:72px;height:54px;padding:0;border:1px solid var(--line);background:var(--ink-2);opacity:.55;transition:opacity .2s,border-color .2s}
+.lb .lb-thumbs button img{width:100%;height:100%;object-fit:cover;border:0}
+.lb .lb-thumbs button[aria-current="true"]{opacity:1;border-color:var(--gold)}
+.lb-thumbs[hidden],.lb button[hidden]{display:none}
+
 
 /* lightbox galerije */
 .lb[hidden]{display:none}
-.lb{position:fixed;inset:0;z-index:50;background:rgba(8,9,10,.96);display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:24px}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(8,9,10,.96);display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;padding:24px}
 .lb-top,.lb-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
 .lb-top strong{font-family:var(--f-display);font-size:28px;font-weight:700;letter-spacing:.02em;color:var(--fg)}
 .lb figure{margin:0;display:flex;align-items:center;justify-content:center;min-height:0;padding-block:24px}
@@ -484,6 +493,7 @@ section.block{padding-block:var(--section)}
   .sec-head{grid-template-columns:minmax(0,1fr);gap:32px;margin-bottom:48px}
   .pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .proj.feature{grid-row:auto}
+  .proj.wide .ph{aspect-ratio:16/9;min-height:0}
   .proj.feature .ph{aspect-ratio:16/9;min-height:0}
   .film{min-height:0}
   .film::before{background:linear-gradient(0deg,rgba(13,14,15,.94) 0%,rgba(13,14,15,.8) 60%,rgba(13,14,15,.4) 100%)}
@@ -520,7 +530,9 @@ section.block{padding-block:var(--section)}
   .step h4{font-size:24px}
   .statement{margin-top:64px;padding-top:32px}
   .pgrid{grid-template-columns:minmax(0,1fr)}
-  .proj.feature{grid-column:auto}
+  .proj.feature,.proj.wide{grid-column:auto}
+  .proj.wide .ph{aspect-ratio:4/3}
+  .lb .lb-thumbs button{width:56px;height:42px}
   .proj.feature .pt{font-size:36px}
   .proj-top{flex-direction:column;align-items:flex-start;gap:8px}
   .proj .loc{white-space:normal}
@@ -655,7 +667,7 @@ section.block{padding-block:var(--section)}
       </div>
 
       <div class="about-side">
-        <div class="ph"><img src="img/o-nama.jpg" alt="Zavarivanje čelične konstrukcije u radionici" loading="lazy"><span class="tag">Izrada · Zavarivanje</span></div>
+        <div class="ph"><img src="img/o-nama.jpg" alt="Čelični nosač izrađen u ZIP-MONT proizvodnoj hali" loading="lazy"><span class="tag">Izrada · Naš pogon</span></div>
         <aside class="sheet" aria-label="Podaci o firmi">
           <div class="sheet-head"><span>List podataka</span><span>ZIP-MONT d.o.o.</span></div>
           <dl>
@@ -727,7 +739,7 @@ section.block{padding-block:var(--section)}
 
   <!-- MEHANIZACIJA -->
   <section class="film" id="mehanizacija" aria-label="Mehanizacija">
-    <img src="img/pogon-video.jpg" alt="Zavarivanje čelične konstrukcije">
+    <img src="img/pogon-video.jpg" alt="Autodizalica na montaži čelične konstrukcije">
     <div class="wrap">
       <div class="film-top"><span class="rec">Mehanizacija</span><span>Mašine · Alati · Oprema</span></div>
       <div class="film-main">
@@ -774,29 +786,33 @@ section.block{padding-block:var(--section)}
       </div>
 
       <div class="pgrid" id="pgrid">
-        <button type="button" class="proj feature" data-i="0">
-          <span class="ph"><img src="img/proj-hala.jpg" alt="Ložionica, Beograd na vodi" loading="lazy"><span class="tag">Beograd na vodi</span><span class="zoom" aria-hidden="true">+</span></span>
-          <span class="proj-top"><span class="pt">Ložionica</span><span class="loc">Beograd</span></span>
-        </button>
-        <button type="button" class="proj" data-i="1">
-          <span class="ph"><img src="img/proj-platforma.jpg" alt="Veštačka stena, VGC Banjica" loading="lazy"><span class="tag">Specijalna konstrukcija</span><span class="zoom" aria-hidden="true">+</span></span>
-          <span class="proj-top"><span class="pt">Veštačka stena</span><span class="loc">VGC Banjica</span></span>
-        </button>
-        <button type="button" class="proj" data-i="2">
-          <span class="ph"><img src="img/proj-logistika.jpg" alt="Železnička stanica Novi Beograd" loading="lazy"><span class="tag">Infrastruktura</span><span class="zoom" aria-hidden="true">+</span></span>
+        <button type="button" class="proj feature" data-photos="img/projekti/zs-01.jpg,img/projekti/zs-02.jpg,img/projekti/zs-03.jpg,img/projekti/zs-04.jpg,img/projekti/zs-05.jpg,img/projekti/zs-06.jpg,img/projekti/zs-07.jpg,img/projekti/zs-08.jpg,img/projekti/zs-09.jpg,img/projekti/zs-10.jpg,img/projekti/zs-11.jpg,img/projekti/zs-12.jpg" data-alt="Železnička stanica Novi Beograd, čelična nadstrešnica perona" aria-label="Železnička stanica, Novi Beograd: otvori galeriju (12 foto)">
+          <span class="ph"><img src="img/projekti/zs-01.jpg" alt="Železnička stanica Novi Beograd, čelična nadstrešnica perona" loading="lazy" decoding="async"><span class="tag">Nadstrešnica perona</span><span class="zoom" aria-hidden="true">12 foto <b>+</b></span></span>
           <span class="proj-top"><span class="pt">Železnička stanica</span><span class="loc">Novi Beograd</span></span>
         </button>
-        <button type="button" class="proj" data-i="3">
-          <span class="ph"><img src="img/proj-skladiste.jpg" alt="Autobuska stanica Novi Beograd" loading="lazy"><span class="tag">Infrastruktura</span><span class="zoom" aria-hidden="true">+</span></span>
+        <button type="button" class="proj" data-photos="img/projekti/vs-01.jpg,img/projekti/vs-02.jpg,img/projekti/vs-03.jpg,img/projekti/vs-04.jpg,img/projekti/vs-05.jpg,img/projekti/vs-06.jpg,img/projekti/vs-07.jpg,img/projekti/vs-08.jpg,img/projekti/vs-09.jpg,img/projekti/vs-10.jpg" data-alt="Veštačka stena VGC Banjica, čelična noseća konstrukcija" aria-label="Veštačka stena, VGC Banjica: otvori galeriju (10 foto)">
+          <span class="ph"><img src="img/projekti/vs-01.jpg" alt="Veštačka stena VGC Banjica, čelična noseća konstrukcija" loading="lazy" decoding="async"><span class="tag">Specijalna konstrukcija</span><span class="zoom" aria-hidden="true">10 foto <b>+</b></span></span>
+          <span class="proj-top"><span class="pt">Veštačka stena</span><span class="loc">VGC Banjica</span></span>
+        </button>
+        <button type="button" class="proj" data-photos="img/projekti/lz-01.jpg,img/projekti/lz-02.jpg,img/projekti/lz-03.jpg,img/projekti/lz-04.jpg,img/projekti/lz-05.jpg,img/projekti/lz-06.jpg,img/projekti/lz-07.jpg,img/projekti/lz-08.jpg,img/projekti/lz-09.jpg" data-alt="Ložionica, Beograd na vodi, čelične konstrukcije" aria-label="Ložionica, Beograd na vodi: otvori galeriju (9 foto)">
+          <span class="ph"><img src="img/projekti/lz-01.jpg" alt="Ložionica, Beograd na vodi, čelične konstrukcije" loading="lazy" decoding="async"><span class="tag">Kulturni centar</span><span class="zoom" aria-hidden="true">9 foto <b>+</b></span></span>
+          <span class="proj-top"><span class="pt">Ložionica</span><span class="loc">Beograd na vodi</span></span>
+        </button>
+        <button type="button" class="proj wide" data-photos="img/projekti/uan-01.jpg,img/projekti/uan-02.jpg,img/projekti/uan-03.jpg,img/projekti/uan-04.jpg,img/projekti/uan-05.jpg,img/projekti/uan-06.jpg,img/projekti/uan-07.jpg,img/projekti/uan-08.jpg,img/projekti/uan-09.jpg" data-alt="Proizvodni pogon Uan, čelične platforme i konstrukcija" aria-label="Proizvodni pogon Uan, Srbija: otvori galeriju (9 foto)">
+          <span class="ph"><img src="img/projekti/uan-01.jpg" alt="Proizvodni pogon Uan, čelične platforme i konstrukcija" loading="lazy" decoding="async"><span class="tag">Industrijski objekat</span><span class="zoom" aria-hidden="true">9 foto <b>+</b></span></span>
+          <span class="proj-top"><span class="pt">Proizvodni pogon Uan</span><span class="loc">Srbija</span></span>
+        </button>
+        <button type="button" class="proj" data-photos="img/projekti/as-01.jpg" data-alt="Autobuska stanica Novi Beograd, čelična nadstrešnica" aria-label="Autobuska stanica, Novi Beograd: otvori galeriju (1 foto)">
+          <span class="ph"><img src="img/projekti/as-01.jpg" alt="Autobuska stanica Novi Beograd, čelična nadstrešnica" loading="lazy" decoding="async"><span class="tag">Nadstrešnica</span><span class="zoom" aria-hidden="true">1 foto <b>+</b></span></span>
           <span class="proj-top"><span class="pt">Autobuska stanica</span><span class="loc">Novi Beograd</span></span>
         </button>
-        <button type="button" class="proj" data-i="4">
-          <span class="ph"><img src="img/proj-hladnjaca.jpg" alt="Proizvodna hala" loading="lazy"><span class="tag">Proizvodni objekat</span><span class="zoom" aria-hidden="true">+</span></span>
-          <span class="proj-top"><span class="pt">Proizvodna hala</span><span class="loc">Srbija</span></span>
+        <button type="button" class="proj" data-photos="img/projekti/hala-01.jpg,img/projekti/hala-02.jpg,img/projekti/hala-03.jpg,img/projekti/hala-04.jpg,img/projekti/hala-05.jpg" data-alt="ZIP-MONT proizvodna hala, izrada čelične konstrukcije" aria-label="Naša proizvodna hala, Beloševac, Valjevo: otvori galeriju (5 foto)">
+          <span class="ph"><img src="img/projekti/hala-01.jpg" alt="ZIP-MONT proizvodna hala, izrada čelične konstrukcije" loading="lazy" decoding="async"><span class="tag">ZIP-MONT pogon</span><span class="zoom" aria-hidden="true">5 foto <b>+</b></span></span>
+          <span class="proj-top"><span class="pt">Naša proizvodna hala</span><span class="loc">Beloševac, Valjevo</span></span>
         </button>
-        <button type="button" class="proj" data-i="5">
-          <span class="ph"><img src="img/proj-most.jpg" alt="Čelični most" loading="lazy"><span class="tag">Most</span><span class="zoom" aria-hidden="true">+</span></span>
-          <span class="proj-top"><span class="pt">Čelični most</span><span class="loc">Srbija</span></span>
+        <button type="button" class="proj wide" data-photos="img/projekti/beska-01.jpg,img/projekti/beska-02.jpg,img/projekti/beska-03.jpg" data-alt="Most Beška, montaža čelične konstrukcije" aria-label="Most Beška, Beška, Srem: otvori galeriju (3 foto)">
+          <span class="ph"><img src="img/projekti/beska-01.jpg" alt="Most Beška, montaža čelične konstrukcije" loading="lazy" decoding="async"><span class="tag">Mostovska konstrukcija</span><span class="zoom" aria-hidden="true">3 foto <b>+</b></span></span>
+          <span class="proj-top"><span class="pt">Most Beška</span><span class="loc">Beška, Srem</span></span>
         </button>
       </div>
     </div>
@@ -809,7 +825,7 @@ section.block{padding-block:var(--section)}
         <p class="eyebrow">Karijera</p>
         <h2>Tražimo ljude koji znaju <em>čelik.</em></h2>
         <p class="lead">Postanite deo tima koji radi na objektima od proizvodnih hala do mostova i specijalnih konstrukcija.</p>
-        <div class="ph"><img src="img/karijera.jpg" alt="Tim na gradilištu" loading="lazy"><span class="tag">Tim na terenu</span></div>
+        <div class="ph"><img src="img/karijera.jpg" alt="ZIP-MONT monteri na gradilištu" loading="lazy"><span class="tag">Tim na terenu</span></div>
       </div>
       <div>
         <div class="apply-note">
@@ -871,6 +887,7 @@ section.block{padding-block:var(--section)}
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Galerija projekata" hidden>
   <div class="lb-top"><strong id="lb-title"></strong><button type="button" id="lb-close" aria-label="Zatvori galeriju">✕</button></div>
   <figure><img id="lb-img" alt=""></figure>
+  <div class="lb-thumbs" id="lb-thumbs"></div>
   <div class="lb-bottom"><span id="lb-count"></span><div class="lb-nav"><button type="button" id="lb-prev" aria-label="Prethodna slika">←</button><button type="button" id="lb-next" aria-label="Sledeća slika">→</button></div></div>
 </div>
 
@@ -887,23 +904,35 @@ section.block{padding-block:var(--section)}
   document.querySelectorAll('.nav a').forEach(function(a){a.addEventListener('click',closeNav);});
   matchMedia('(min-width:961px)').addEventListener('change',function(e){if(e.matches)closeNav();});
 
-  /* galerija */
+  /* galerija: svaki projekat ima svoje slike */
   var items=[].slice.call(document.querySelectorAll('.proj')),lb=document.getElementById('lb'),
-      img=document.getElementById('lb-img'),title=document.getElementById('lb-title'),count=document.getElementById('lb-count'),cur=0,last=null;
+      img=document.getElementById('lb-img'),title=document.getElementById('lb-title'),count=document.getElementById('lb-count'),
+      thumbs=document.getElementById('lb-thumbs'),photos=[],alt='',cur=0,last=null;
   function show(i){
-    cur=(i+items.length)%items.length;
-    var p=items[cur],im=p.querySelector('img');
-    img.src=im.src;img.alt=im.alt;
-    title.textContent=p.querySelector('.pt').textContent+' · '+p.querySelector('.loc').textContent;
-    count.textContent=String(cur+1).padStart(2,'0')+' / '+String(items.length).padStart(2,'0');
+    cur=(i+photos.length)%photos.length;
+    img.src=photos[cur];img.alt=alt+', fotografija '+(cur+1);
+    count.textContent=String(cur+1).padStart(2,'0')+' / '+String(photos.length).padStart(2,'0');
+    [].forEach.call(thumbs.children,function(b,k){b.setAttribute('aria-current',k===cur?'true':'false');if(k===cur&&b.scrollIntoView)b.scrollIntoView({block:'nearest',inline:'nearest'});});
+    var nx=new Image();nx.src=photos[(cur+1)%photos.length];
   }
-  function open(i){last=document.activeElement;show(i);lb.hidden=false;document.body.style.overflow='hidden';document.getElementById('lb-close').focus();}
+  function open(p){
+    last=document.activeElement;photos=p.dataset.photos.split(',');alt=p.dataset.alt;
+    title.textContent=p.querySelector('.pt').textContent+' · '+p.querySelector('.loc').textContent;
+    thumbs.innerHTML='';
+    photos.forEach(function(src,k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Fotografija '+(k+1));b.innerHTML='<img src="'+src+'" alt="" loading="lazy">';b.addEventListener('click',function(){show(k);});thumbs.appendChild(b);});
+    thumbs.hidden=photos.length<2;
+    document.getElementById('lb-prev').hidden=document.getElementById('lb-next').hidden=photos.length<2;
+    show(0);lb.hidden=false;document.body.style.overflow='hidden';document.getElementById('lb-close').focus();
+  }
   function close(){lb.hidden=true;document.body.style.overflow='';if(last)last.focus();}
-  items.forEach(function(p,i){p.addEventListener('click',function(){open(i);});});
+  items.forEach(function(p){p.addEventListener('click',function(){open(p);});});
   document.getElementById('lb-close').addEventListener('click',close);
   document.getElementById('lb-prev').addEventListener('click',function(){show(cur-1);});
   document.getElementById('lb-next').addEventListener('click',function(){show(cur+1);});
   lb.addEventListener('click',function(e){if(e.target===lb||e.target.tagName==='FIGURE')close();});
+  var tx=null;
+  lb.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',function(e){if(tx===null)return;var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50&&photos.length>1)show(cur+(dx<0?1:-1));tx=null;});
   document.addEventListener('keydown',function(e){
     if(lb.hidden)return;
     if(e.key==='Escape')close();
